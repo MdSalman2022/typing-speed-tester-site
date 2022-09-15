@@ -50,6 +50,7 @@ const typeController = (e) => {
 
   // check if given question text is equal to user typed text
   if (questionText === userText) {
+    console.log('gameover')
     gameOver();
   }
 };
@@ -64,6 +65,7 @@ const validate = (key) => {
 // FINISHED TYPING
 const gameOver = () => {
   document.removeEventListener("keydown", typeController);
+
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
