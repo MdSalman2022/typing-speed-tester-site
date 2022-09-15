@@ -37,6 +37,10 @@ const typeController = (e) => {
   if (!validLetters.includes(newLetter)) {
     return;
   }
+  // if (validate(userText[userText.length - 1]) === false) {
+  //   errorCount++;
+  //   console.log(errorCount);
+  // }
 
   userText += newLetter;
 
@@ -45,12 +49,12 @@ const typeController = (e) => {
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+    errorCount++;
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
   // check if given question text is equal to user typed text
   if (questionText === userText) {
-    console.log('gameover')
     gameOver();
   }
 };
@@ -71,6 +75,7 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
 
+
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -86,7 +91,6 @@ const gameOver = () => {
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
@@ -117,6 +121,7 @@ const start = () => {
       countdownOverlay.style.display = "none";
       document.addEventListener("keydown", typeController);
       display.classList.remove("inactive");
+
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
