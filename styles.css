@@ -189,14 +189,16 @@ button {
 
 #navbar{
   text-align: center;  
-  color: #9dffad;
+  padding: 20px;
 }
 #navbar a{
-  color: #9dffad;
+  color: #fff;
   text-decoration: none;
+  padding: 10px 15px;
 }
 .active{
   font-weight: 700;
+  border-bottom: 3px solid #9dffad;
 }
 @media only screen and (max-width: 700px) {
   .box-container {
