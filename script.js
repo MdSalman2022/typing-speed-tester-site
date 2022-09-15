@@ -4,6 +4,8 @@ const startBtn = document.getElementById("starts");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
+const nav = document.getElementById("nav");
+
 
 // variables
 let userText = "";
@@ -16,6 +18,7 @@ fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
+    console.log(questionText)
     question.innerHTML = questionText;
   });
 
@@ -37,10 +40,6 @@ const typeController = (e) => {
   if (!validLetters.includes(newLetter)) {
     return;
   }
-  // if (validate(userText[userText.length - 1]) === false) {
-  //   errorCount++;
-  //   console.log(errorCount);
-  // }
 
   userText += newLetter;
 

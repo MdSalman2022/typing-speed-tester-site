@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Monster Blog</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 class="title"><img src="./logo.png" /></h1>
+    <p id="navbar"><a id="nav" href="./index.html">Home</a> | <a id="nav" class="active" href="./blog.html">Blog</a></p>
+    
+    <div class="box-container">
+
+
+        <div class="accordion bg-transparent" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item bg-transparent">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Difference Between Local Storage, Session Storage?
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body text-white">
+                <strong>Local Storage:</strong> 
+
+                It is a web storage method that helps us store data on the client’s computer in the form of key/value pairs in a web browser. The data is stored in local storage for a lifetime unless the user manually deletes it from the browser.
+                <br><strong>Session Storage:</strong> 
+                It is very similar to the local storage. Still, the main difference lies in the lifespan as it persists in the browser until its current tab is on. Once you close the tab or terminate it, the data on session storage also gets lost. 
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-transparent">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                Difference between Global Scope and Block Scope?
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body text-white bg-transparent">
+                <strong>The Global scope</strong>
+                A variable exists inside or outside a block. If a variable is declared outside all functions or curly braces ({}), it exists in the global scope. The global variables can be accessed by any line of code in the program, including inside blocks.
+                <br><strong>Block Scope</strong> We’ve seen variables defined with the var keyword. Var can declare a variable either in the global or local scope. ES6 introduced block scope by using the let and const keywords. These two keywords are scoped within the block which are defined.
+                Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.
+
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-transparent">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed text-white bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                How does the Event Loop works in JavaScript? 
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body text-white bg-transparent">
+               When any Asynchronous event occur such as setTimeOut or promises... 
+                Then these task takes some time to complete I/O if they have any. 
+                If they completed their I/O or don't have any, then they simply put into 
+                message queue or callback queue. Then event loop will firstly execute the 
+                call stack tasks and then look for callback or message queue and then execute it.
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-transparent">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button class="accordion-button collapsed text-white bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                In how many ways can we get undefined in javascript?
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+            <div class="accordion-body text-white bg-transparent">
+                8 Ways to get Undefined: <br>
+                <ul>
+                    <li>A declared variable without assigning any value to it.</li>
+                    <li>Implicit returns of functions due to missing return statements.</li>
+                    <li>return statements that do not explicitly return anything.</li>
+                    <li>Lookups of non-existent properties in an object.</li>
+                    <li>Function parameters that have not passed.</li>
+                    <li>Anything that has been set to the value of undefined.</li>
+                    <li>Any expression in the form of void(expression)</li>
+                    <li>The value of the global variable undefined</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+
+    <script src="./history.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
