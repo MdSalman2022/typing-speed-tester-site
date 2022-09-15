@@ -73,6 +73,9 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
+  const countWords = questionText.split(" ").length;
+  const wpm = Math.round((countWords / timeTaken) * 60);
+  const accuracy = Math.round(((countWords - errorCount) / countWords) * 100);
 
 
   // show result modal
@@ -84,9 +87,13 @@ const gameOver = () => {
   // make it inactive
   display.classList.add("inactive");
   // show result
+
+
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>Your wpm is: <span class="bold">${wpm}</span></p>
+    <p>Consistency: <span class="bold">${accuracy}</span> %</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
@@ -96,6 +103,8 @@ const gameOver = () => {
   startTime = null;
   errorCount = 0;
   userText = "";
+  wpm = 0;
+  accuracy = 0;
   display.classList.add("inactive");
 };
 
